@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { stroke: #333; stroke-width: 2px; }
+    .label { font-family: Arial; font-size: 14px; }
+    .title { font-family: Arial; font-size: 16px; font-weight: bold; }
+    .arrow { stroke: #333; stroke-width: 2px; marker-end: url(#arrowhead); }
+    .ui-layer { fill: #e3f2fd; }
+    .service-layer { fill: #e8f5e9; }
+    .data-layer { fill: #fff8e1; }
+    .security-layer { fill: #f3e5f5; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <rect x="150" y="30" width="500" height="40" rx="5" fill="#bbdefb" class="box" />
+  <text x="400" y="55" text-anchor="middle" class="title">Password Manager Component Interaction</text>
+  
+  <!-- Browser/User Interface Layer -->
+  <rect x="50" y="100" width="700" height="100" rx="5" class="box ui-layer" />
+  <text x="400" y="125" text-anchor="middle" class="title">User Interface Layer (Browser)</text>
+  <text x="400" y="150" text-anchor="middle" class="label">HTML Templates (Jinja2) + CSS + JavaScript</text>
+  <text x="200" y="175" text-anchor="middle" class="label">Forms</text>
+  <text x="400" y="175" text-anchor="middle" class="label">Password Display</text>
+  <text x="600" y="175" text-anchor="middle" class="label">Visual Feedback</text>
+  
+  <line x1="400" y1="200" x2="400" y2="230" class="arrow" />
+  
+  <!-- Service Layer -->
+  <rect x="50" y="230" width="700" height="200" rx="5" class="box service-layer" />
+  <text x="400" y="255" text-anchor="middle" class="title">Service Layer (Flask)</text>
+  
+  <!-- Service Layer Components -->
+  <rect x="80" y="280" width="200" height="120" rx="5" stroke="#333" stroke-width="1" fill="#ffffff" />
+  <text x="180" y="305" text-anchor="middle" class="title">Authentication</text>
+  <text x="180" y="330" text-anchor="middle" class="label">User Registration</text>
+  <text x="180" y="350" text-anchor="middle" class="label">Login/Logout</text>
+  <text x="180" y="370" text-anchor="middle" class="label">Session Management</text>
+  
+  <rect x="300" y="280" width="200" height="120" rx="5" stroke="#333" stroke-width="1" fill="#ffffff" />
+  <text x="400" y="305" text-anchor="middle" class="title">Password Management</text>
+  <text x="400" y="330" text-anchor="middle" class="label">CRUD Operations</text>
+  <text x="400" y="350" text-anchor="middle" class="label">Password Generation</text>
+  <text x="400" y="370" text-anchor="middle" class="label">Form Processing</text>
+  
+  <rect x="520" y="280" width="200" height="120" rx="5" stroke="#333" stroke-width="1" fill="#ffffff" />
+  <text x="620" y="305" text-anchor="middle" class="title">Core Services</text>
+  <text x="620" y="330" text-anchor="middle" class="label">Route Definitions</text>
+  <text x="620" y="350" text-anchor="middle" class="label">Error Handling</text>
+  <text x="620" y="370" text-anchor="middle" class="label">Input Validation</text>
+  
+  <line x1="180" y1="400" x2="180" y2="460" class="arrow" />
+  <line x1="400" y1="400" x2="400" y2="460" class="arrow" />
+  <line x1="620" y1="400" x2="620" y2="460" class="arrow" />
+  
+  <!-- Security Layer -->
+  <rect x="50" y="460" width="700" height="120" rx="5" class="box security-layer" />
+  <text x="400" y="485" text-anchor="middle" class="title">Security Layer</text>
+  
+  <!-- Security Layer Components -->
+  <rect x="80" y="500" width="200" height="60" rx="5" stroke="#333" stroke-width="1" fill="#ffffff" />
+  <text x="180" y="525" text-anchor="middle" class="title">Password Hashing</text>
+  <text x="180" y="545" text-anchor="middle" class="label">PBKDF2 with SHA-256</text>
+  
+  <rect x="300" y="500" width="200" height="60" rx="5" stroke="#333" stroke-width="1" fill="#ffffff" />
+  <text x="400" y="525" text-anchor="middle" class="title">AES-GCM Encryption</text>
+  <text x="400" y="545" text-anchor="middle" class="label">Password Encryption/Decryption</text>
+  
+  <rect x="520" y="500" width="200" height="60" rx="5" stroke="#333" stroke-width="1" fill="#ffffff" />
+  <text x="620" y="525" text-anchor="middle" class="title">Password Generator</text>
+  <text x="620" y="545" text-anchor="middle" class="label">Secure Random Generation</text>
+  
+  <line x1="180" y1="560" x2="180" y2="600" class="arrow" />
+  <line x1="400" y1="560" x2="400" y2="600" class="arrow" />
+  <line x1="620" y1="560" x2="620" y2="600" class="arrow" />
+  
+  <!-- Data Layer -->
+  <rect x="50" y="600" width="700" height="80" rx="5" class="box data-layer" />
+  <text x="400" y="625" text-anchor="middle" class="title">Data Layer</text>
+  <text x="200" y="650" text-anchor="middle" class="label">SQLAlchemy ORM</text>
+  <text x="400" y="650" text-anchor="middle" class="label">Models (User, Password)</text>
+  <text x="600" y="650" text-anchor="middle" class="label">SQLite/PostgreSQL Database</text>
+  
+  <!-- Cross-Component Interactions -->
+  <line x1="280" y1="340" x2="300" y2="340" class="arrow" />
+  <line x1="500" y1="340" x2="520" y2="340" class="arrow" />
+  <line x1="280" y1="530" x2="300" y2="530" class="arrow" />
+  <line x1="500" y1="530" x2="520" y2="530" class="arrow" />
+</svg>

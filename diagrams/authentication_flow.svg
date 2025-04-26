@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { stroke: #333; stroke-width: 2px; }
+    .label { font-family: Arial; font-size: 14px; }
+    .title { font-family: Arial; font-size: 16px; font-weight: bold; }
+    .arrow { stroke: #333; stroke-width: 2px; marker-end: url(#arrowhead); }
+    .actor { fill: #e3f2fd; }
+    .process { fill: #e8f5e9; }
+    .decision { fill: #fff9c4; }
+    .action { fill: #f3e5f5; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <rect x="100" y="30" width="800" height="40" rx="5" fill="#bbdefb" class="box" />
+  <text x="500" y="55" text-anchor="middle" class="title">User Authentication Flow</text>
+  
+  <!-- Actors -->
+  <rect x="100" y="100" width="150" height="60" rx="5" class="box actor" />
+  <text x="175" y="135" text-anchor="middle" class="title">Unauthenticated User</text>
+  
+  <rect x="300" y="100" width="150" height="60" rx="5" class="box actor" />
+  <text x="375" y="135" text-anchor="middle" class="title">Registration Page</text>
+  
+  <rect x="500" y="100" width="150" height="60" rx="5" class="box actor" />
+  <text x="575" y="135" text-anchor="middle" class="title">Login Page</text>
+  
+  <rect x="700" y="100" width="150" height="60" rx="5" class="box actor" />
+  <text x="775" y="135" text-anchor="middle" class="title">Authenticated User</text>
+  
+  <!-- Registration Flow -->
+  <line x1="175" y1="160" x2="175" y2="200" class="arrow" />
+  <line x1="175" y1="200" x2="375" y2="200" class="arrow" />
+  <text x="260" y="190" class="label">Navigate to registration</text>
+  
+  <line x1="375" y1="160" x2="375" y2="230" class="arrow" />
+  <text x="440" y="200" class="label">Submit registration form</text>
+  
+  <!-- Registration Process -->
+  <rect x="300" y="230" width="150" height="50" rx="5" class="box process" />
+  <text x="375" y="260" text-anchor="middle" class="label">Form Validation</text>
+  
+  <line x1="375" y1="280" x2="375" y2="320" class="arrow" />
+  <text x="400" y="300" class="label">Valid?</text>
+  
+  <polygon points="300,320 450,320 375,370" class="box decision" />
+  <text x="375" y="340" text-anchor="middle" class="label">Decision</text>
+  
+  <!-- Not valid path -->
+  <line x1="300" y1="320" x2="250" y2="320" class="arrow" />
+  <rect x="150" y="300" width="100" height="40" rx="5" class="box action" />
+  <text x="200" y="325" text-anchor="middle" class="label">Display Errors</text>
+  <line x1="150" y1="320" x2="150" y2="200" class="arrow" />
+  <text x="125" y="250" class="label">NO</text>
+  
+  <!-- Valid path -->
+  <line x1="375" y1="370" x2="375" y2="400" class="arrow" />
+  <text x="400" y="390" class="label">YES</text>
+  
+  <rect x="300" y="400" width="150" height="50" rx="5" class="box process" />
+  <text x="375" y="425" text-anchor="middle" class="label">Generate Salt &amp; Hash</text>
+  
+  <line x1="375" y1="450" x2="375" y2="480" class="arrow" />
+  
+  <rect x="300" y="480" width="150" height="50" rx="5" class="box process" />
+  <text x="375" y="505" text-anchor="middle" class="label">Create User in DB</text>
+  
+  <line x1="375" y1="530" x2="375" y2="560" class="arrow" />
+  
+  <rect x="300" y="560" width="150" height="30" rx="5" class="box action" />
+  <text x="375" y="580" text-anchor="middle" class="label">Flash Success Message</text>
+  
+  <line x1="375" y1="590" x2="375" y2="620" class="arrow" />
+  <line x1="375" y1="620" x2="575" y2="620" class="arrow" />
+  <text x="475" y="610" class="label">Redirect to login</text>
+  
+  <!-- Login Flow -->
+  <line x1="575" y1="620" x2="575" y2="200" stroke-dasharray="5,5" stroke="#666" stroke-width="1" />
+  <line x1="575" y1="160" x2="575" y2="230" class="arrow" />
+  <text x="640" y="200" class="label">Submit login form</text>
+  
+  <!-- Login Process -->
+  <rect x="500" y="230" width="150" height="50" rx="5" class="box process" />
+  <text x="575" y="260" text-anchor="middle" class="label">Form Validation</text>
+  
+  <line x1="575" y1="280" x2="575" y2="320" class="arrow" />
+  
+  <rect x="500" y="320" width="150" height="50" rx="5" class="box process" />
+  <text x="575" y="350" text-anchor="middle" class="label">Verify Credentials</text>
+  
+  <line x1="575" y1="370" x2="575" y2="410" class="arrow" />
+  <text x="600" y="390" class="label">Valid?</text>
+  
+  <polygon points="500,410 650,410 575,460" class="box decision" />
+  <text x="575" y="430" text-anchor="middle" class="label">Decision</text>
+  
+  <!-- Not valid login path -->
+  <line x1="500" y1="410" x2="450" y2="410" class="arrow" />
+  <rect x="350" y="390" width="100" height="40" rx="5" class="box action" />
+  <text x="400" y="415" text-anchor="middle" class="label">Display Error</text>
+  <line x1="350" y1="410" x2="350" y2="200" class="arrow" />
+  <text x="325" y="300" class="label">NO</text>
+  
+  <!-- Valid login path -->
+  <line x1="575" y1="460" x2="575" y2="490" class="arrow" />
+  <text x="600" y="480" class="label">YES</text>
+  
+  <rect x="500" y="490" width="150" height="50" rx="5" class="box process" />
+  <text x="575" y="515" text-anchor="middle" class="label">Create User Session</text>
+  
+  <line x1="575" y1="540" x2="575" y2="570" class="arrow" />
+  
+  <rect x="500" y="570" width="150" height="30" rx="5" class="box action" />
+  <text x="575" y="590" text-anchor="middle" class="label">Flash Success Message</text>
+  
+  <line x1="575" y1="600" x2="575" y2="640" class="arrow" />
+  <line x1="575" y1="640" x2="775" y2="640" class="arrow" />
+  <text x="675" y="630" class="label">Redirect to dashboard</text>
+  
+  <!-- Session Management -->
+  <rect x="700" y="520" width="200" height="100" rx="5" class="box process" />
+  <text x="800" y="540" text-anchor="middle" class="title">Session Management</text>
+  <text x="800" y="565" text-anchor="middle" class="label">- Cookie-based session</text>
+  <text x="800" y="585" text-anchor="middle" class="label">- Flask-Login backend</text>
+  <text x="800" y="605" text-anchor="middle" class="label">- Remember-me option</text>
+  
+  <!-- Logout Flow -->
+  <line x1="775" y1="160" x2="775" y2="230" class="arrow" />
+  <text x="830" y="200" class="label">Click logout</text>
+  
+  <rect x="700" y="230" width="150" height="50" rx="5" class="box process" />
+  <text x="775" y="260" text-anchor="middle" class="label">Destroy User Session</text>
+  
+  <line x1="775" y1="280" x2="775" y2="320" class="arrow" />
+  
+  <rect x="700" y="320" width="150" height="30" rx="5" class="box action" />
+  <text x="775" y="340" text-anchor="middle" class="label">Flash Logout Message</text>
+  
+  <line x1="775" y1="350" x2="775" y2="380" class="arrow" />
+  <line x1="775" y1="380" x2="175" y2="380" class="arrow" />
+  <text x="475" y="370" class="label">Redirect to homepage</text>
+</svg>
